@@ -1,0 +1,28 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    // Redirect to the sign-in page if the user is not logged in
+    header("Location: signin.html");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+    </div>
+    <div class="container">
+        <p>You are now logged in.</p>
+        <a href="profile.php">Go to Profile</a>
+        <a href="phpscripts/logout.php">Log Out</a>
+    </div>
+</body>
+</html>
