@@ -1,11 +1,13 @@
-@font-face{
+/* -------------------- Global Styles -------------------- */
+@font-face {
     src: url(fonts/NotoSans-Regular.ttf);
     font-family: 'NotoSans';
 }
-@font-face{
+@font-face {
     src: url(fonts/NotoSans-Regular.ttf);
     font-family: 'NotoSemiBold';
 }
+
 body {
     font-family: 'NotoSans', sans-serif;
     background-color: #fff;
@@ -13,6 +15,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .container {
     max-width: 500px;
     margin: 75px auto;
@@ -20,71 +23,107 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
+
+.container h1{
+    text-align: center;
+}
+
+.container img{
+   display: block;
+   margin: auto;
+   justify-content: center;
+}
+
+/* -------------------- Content Section -------------------- */
+
+.content {
+    text-align: center;
+}
+
+
+.content p {
+    text-align: center;
+}
+
+.content .menu-items img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+
+.content h1{
+    text-align: center;
+    color: #e51636;
+    font-size: 30px;
+}
+
+.content h2 {
+    text-align: center;
+    color: #e51636;
+    font-size: 25px;
+}
+.content h3 {
+    text-align: center;
+    color: #e51636;
+    font-size: 20px;
+}
+
+/* -------------------- Header Section -------------------- */
 .header {
     display: flex;
     justify-content: space-between;
-    align-items:center;
+    align-items: center;
     background-color: #ffffff;
     padding: 10px;
     border-bottom: 5px solid #c4142e;
 }
 
- /* for the image and sign in/up inside the container for sign-in and sign-up */
-.signh{
-    align-items:center;
-    justify-content: center;
-    text-align: center;
-}
 .header img {
     width: 100px;
     height: 75px;
-
 }
 
 .header h1 {
     color: #e51636;
 }
 
-.header .sign-in button {
-    width: auto;
-    padding: 12px 17px;
-    background-image: linear-gradient(45deg,  #ed0505, #c4142e);
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition-duration: 0.2s;
-    font-family: 'NotoSemiBold', sans-serif;
+.header .buttons {
+    display: flex;
+    gap: 10px;
 }
 
+.header .sign-in button,
 .header .sign-up button {
     width: auto;
-    padding: 10px 15px;
-    background-color: #fff;
-    color: #e51635;
-    border: 2px solid #e51635;
+    padding: 12px 17px;
     border-radius: 20px;
     cursor: pointer;
-    transition-duration: 0.1s;
     font-family: 'NotoSemiBold', sans-serif;
+    transition-duration: 0.2s;
+}
+
+.header .sign-in button {
+    background-image: linear-gradient(45deg, #ed0505, #c4142e);
+    color: #fff;
+    border: none;
 }
 
 .header .sign-in button:hover {
-    background-image: linear-gradient(45deg,  #a10c23, #9c1a2e);
-    color: #ffffff;
+    background-image: linear-gradient(45deg, #a10c23, #9c1a2e);
+}
+
+.header .sign-up button {
+    background-color: #fff;
+    color: #e51635;
+    border: 2px solid #e51635;
 }
 
 .header .sign-up button:hover {
     box-shadow: inset 0 0 0 0.75px #e51635;
 }
 
-.header .buttons {
-    display: flex;
-    gap: 10px;
-}
- /* Not a real nav-bar, just something for the header*/
- 
 .header .nav-bar {
     font-weight: bold;
     font-size: 18px;
@@ -93,6 +132,7 @@ body {
     margin-left: 20px;
     flex-grow: 1;
 }
+
 .header .nav-bar ul {
     display: flex;
     list-style: none;
@@ -114,19 +154,24 @@ body {
     color: #ac1d1d;
 }
 
+/* -------------------- Sign-In/Sign-Up Section -------------------- */
 .form-group {
     margin-bottom: 15px;
 }
+
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
 }
+
 .form-group input {
     width: 95%;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+
 .form-group button {
     width: 100%;
     padding: 10px;
@@ -137,6 +182,7 @@ body {
     cursor: pointer;
     transition-duration: 0.2s;
 }
+
 .form-group button:hover {
     background-color: #c4142e;
 }
@@ -147,14 +193,13 @@ body {
     margin-top: 5px;
 }
 
-
+/* -------------------- Footer Section -------------------- */
 .footer {
-    background-color: #333;
+    background-color: #f1f1f1;
     color: #8b8b8b;
     text-align: center;
     padding: 20px;
     margin-top: 20px;
-    background-color: #f1f1f1;
     width: 100%;
     bottom: 0;
 }
@@ -170,12 +215,12 @@ body {
     color: #ac1d1d;
 }
 
+/* -------------------- Menu Section -------------------- */
 .menu-items {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-
 }
 
 .menu-item {
@@ -198,30 +243,12 @@ body {
     margin-bottom: 10px;
 }
 
-
-.header .sign-up button {
-    width: auto;
-    padding: 10px 15px;
-    background-color: #fff;
-    color: #e51635;
-    border: 2px solid #e51635;
-    border-radius: 20px;
-    cursor: pointer;
-    transition-duration: 0.1s;
-    font-family: 'NotoSemiBold', sans-serif;
-}
-
-
-
-
-
-
-/* "Find a Chick-Fil-A */
+/* -------------------- Find a Chick-fil-A Button -------------------- */
 .find-cfa button {
     width: auto;
     padding: 12px 10px;
-    background: none; 
-    color: #e51635; 
+    background: none;
+    color: #e51635;
     border: none;
     cursor: pointer;
     transition-duration: 0.1s;
@@ -229,40 +256,29 @@ body {
 }
 
 .find-cfa button:hover {
-    color: #ac1d1d; 
+    color: #ac1d1d;
 }
 
-
-.map-container {
-    width: 100%;
-    height: 700px;
-    border: 1px solid #ccc;
-}
-
-
-
-
-
-/* "Order Now */
+/* -------------------- Order Now Section -------------------- */
 .order-container {
     position: absolute;
     top: 120px;
     left: 30px;
     width: 300px;
-    height: 600px; 
-    background-image: linear-gradient(10deg,  #ffffff, #ffffff);
+    height: 600px;
+    background-image: linear-gradient(10deg, #ffffff, #ffffff);
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 20px;
-    z-index: 2; 
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.order-type { /* pickup and delivery button */
+.order-type {
     width: 100px;
-    height: 30px; 
+    height: 30px;
     background-color: #fff;
     color: #e51635;
     border: none;
@@ -272,34 +288,27 @@ body {
 
 .order-type.active {
     height: 30px;
-    background-image: linear-gradient(45deg,  #ed0505, #c4142e);
+    background-image: linear-gradient(45deg, #ed0505, #c4142e);
     color: #fff;
     border: none;
     border-radius: 20px;
-    cursor: pointer;
-    font-family: 'NotoSemiBold', sans-serif;
 }
 
 .order-type:hover {
-    color: #ac1d1d; 
+    color: #ac1d1d;
 }
 
-
-
-
-
-/* "Order Now" */
-.address-search { /* red search bar */
+.address-search {
     display: flex;
     width: 100%;
     margin-top: 10px;
 }
 
-.address-search input { /* inside search bar */
+.address-search input {
     flex-grow: 1;
     padding: 1px 10px;
-    border: 2px solid #e51635; 
-    border-radius: 20px; 
+    border: 2px solid #e51635;
+    border-radius: 20px;
     font-size: 12px;
     outline: none;
     font-family: 'NotoSans', sans-serif;
@@ -307,12 +316,12 @@ body {
 }
 
 .address-search input:focus {
-    border-color: #c4142e; 
+    border-color: #c4142e;
 }
 
-.address-search button { /* search button */
+.address-search button {
     width: 50px;
-    height: 30px; 
+    height: 30px;
     background: none;
     color: #e51635;
     border: none;
@@ -321,11 +330,10 @@ body {
 }
 
 .address-search button:hover {
-    color: #ac1d1d; 
+    color: #ac1d1d;
 }
 
-
-/* Our Values */
+/* -------------------- Our Values Section -------------------- */
 .values-container {
     display: flex;
     flex-direction: column;
@@ -349,11 +357,17 @@ body {
 
 .values-text {
     width: 50%;
-    text-align: center; 
+    text-align: center;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
 }
 
+/* -------------------- Map Section -------------------- */
+.map-container {
+    width: 100%;
+    height: 700px;
+    border: 1px solid #ccc;
+}

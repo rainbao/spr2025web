@@ -26,10 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //If successful, redirect to the signin page
     }  catch (PDOException $e) {
         if ($e->getCode() == 23000) { 
-            echo "<script>alert('Error: Email or username already exists.');</script>";
+            $error_message = "Email or username already exists.";
         } else {
-            echo "<script>alert('Error: " . addslashes($e->getMessage()) . "');</script>";
+            $error_message = "Error: " . urlencode($e->getMessage());
         }
+        // Redirect back to signup.html with the error message
+        header("Location: ../signup.html?error=" . urlencode($error_message));
+        exit();
     }
 }
 ?>
