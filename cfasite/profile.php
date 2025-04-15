@@ -18,28 +18,11 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <a href="index.html">
-            <img src="images/logo.svg" alt="Chick-fil-A Logo">
-        </a>
 
-        <div class="nav-bar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="order.html">Order Now</a></li>
-            </ul>
-        </div>
-
-        <div class="buttons">
-            <div class="sign-in">
-                <a href="phpscripts/logout.php">
-                    <button>Sign Out</button>
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- Header -->
+    <?php
+    include 'phpscripts/header.php';
+    ?>
 
     <div class="container">
         <div class="profile-header">
@@ -76,13 +59,10 @@ if (!isset($_SESSION['username'])) {
         </div>
     </div>
 
-    <div class="footer">
-        <p>Contact us: (123) 456-7890 | email@example.com</p>
-        <p>Follow us on:
-            <a href="https://facebook.com" target="_blank">Facebook</a> |
-            <a href="https://twitter.com" target="_blank">X</a> |
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-        </p>
-    </div>
+     <!-- Footer -->
+    <?php
+    include 'phpscripts/footer.php';
+    ?>
+
 </body>
 </html>

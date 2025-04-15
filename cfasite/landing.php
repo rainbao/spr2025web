@@ -18,13 +18,25 @@ if (!isset($_SESSION['username'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="header">
-        <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
-    </div>
+
+
+    <!-- Header -->
+    <?php
+    include 'phpscripts/header.php';
+    ?>
+
+
     <div class="container">
         <p>You are now logged in.</p>
         <a href="profile.php">Go to Profile</a>
         <a href="phpscripts/logout.php">Log Out</a>
     </div>
+
+
+    <!-- Footer -->
+    <?php
+    include 'phpscripts/footer.php';
+    ?>
+
 </body>
 </html>
