@@ -1,8 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "group3-sp25";
-$password = "GroupThree2025";
-$db = "group3-sp25";
+$config = include(__DIR__ . '/../config/db_config.php');
+
+$servername = $config['servername'];
+$username = $config['username'];
+$password = $config['password'];
+$db = $config['db'];
 
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
