@@ -1,5 +1,4 @@
 <?php
-
 require_once 'connect.php'; 
 require_once 'included_functions(1).php';
 
@@ -20,18 +19,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':username' => $username,
             ':password' => $password
         ]);
-        echo "Sign up successful!";
-        header("Location: ../signin.html");
+        header("Location: ../signin.php");
         exit();
         //If successful, redirect to the signin page
     }  catch (PDOException $e) {
         if ($e->getCode() == 23000) { 
             $error_message = "Email or username already exists.";
         } else {
-            $error_message = "Error: " . urlencode($e->getMessage());
+            $error_message = "Error: " . $e->getMessage();
         }
         // Redirect back to signup.html with the error message
-        header("Location: ../signup.html?error=" . urlencode($error_message));
+        header("Location: ../signup.php?error=" . urlencode($error_message));
         exit();
     }
 }

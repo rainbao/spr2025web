@@ -2,6 +2,6 @@
 session_start();
 session_unset(); // Clear all session variables
 session_destroy(); // Destroy the session
-header("Location: ../signin.html"); // Redirect to the sign-in page
+header("Location: ../signin.php"); // Redirect to the sign-in page
 exit();
 ?>

@@ -154,6 +154,22 @@ body {
     color: #ac1d1d;
 }
 
+
+.header .cart button {
+    background-color: #e51636;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'NotoSemiBold', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.header .cart button:hover {
+    background-color: #c4142e;
+}
+
 /* -------------------- Sign-In/Sign-Up Section -------------------- */
 .form-group {
     margin-bottom: 15px;
@@ -233,14 +249,125 @@ body {
     transition: transform 0.05s;
 }
 
-.menu-item:hover {
-    transform: scale(1.01);
-}
+
 
 .menu-item img {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+}
+
+.menu-item h2 {
+    text-align: center;
+    color: #e51636;
+    font-size: 25px;
+}
+
+.menu-item p {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+}
+
+.menu-item p {
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.menu-item p strong {
+    color: #e51636;
+}
+
+.menu-item button{
+    background-color: #e51636;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'NotoSemiBold', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.menu-item button:hover {
+    background-color: #c4142e;
+}
+
+
+/* -------------------- Cart Section -------------------- */
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 16px;
+    text-align: center;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.cart-table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.cart-table td {
+    padding: 15px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.cart-table td:first-child {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.cart-table td:last-child {
+    font-weight: bold;
+    color: #e51636;
+}
+
+/* Cart Buttons */
+.cart-actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.cart-actions button {
+    background-color: #e51636;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'NotoSemiBold', sans-serif;
+    transition: background-color 0.2s;
+}
+
+.cart-actions button:hover {
+    background-color: #c4142e;
+}
+
+.cart-actions .clear-cart {
+    background-color: #fff;
+    color: #e51636;
+    border: 2px solid #e51636;
+}
+
+.cart-actions .clear-cart:hover {
+    background-color: #e51636;
+    color: #fff;
 }
 
 /* -------------------- Find a Chick-fil-A Button -------------------- */
