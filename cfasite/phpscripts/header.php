@@ -3,7 +3,7 @@ session_start();
 require_once 'phpscripts/connect.php';
 ?>
 <div class="header">
-    <a href="index.php"></a>
+    <a href="index.php">
         <img src="images/logo.svg" alt="Chick-fil-A Logo">
     </a>
 
@@ -12,7 +12,7 @@ require_once 'phpscripts/connect.php';
             <li><a href="index.php">Home</a></li>
             <li><a href="menu.php">Menu</a></li>
             <li><a href="about.php">About Us</a></li>
-            <li><a href="order.php">Order Now</a></li>
+            <li><a href="order_tracking.php">Orders</a></li>
         </ul>
     </div>
 
@@ -36,7 +36,7 @@ require_once 'phpscripts/connect.php';
         </div>
 
         <div class="find-cfa">
-            <a href="find-cfa.php">
+            <a href="find_cfa.php">
                 <button>Find a Chick-fil-A</button>
             </a>
         </div>
@@ -44,8 +44,8 @@ require_once 'phpscripts/connect.php';
         <!-- Sign-In/Sign-Out Button -->
         <?php if (isset($_SESSION['username'])): ?>
             <div class="sign-in">
-                <a href="phpscripts/logout.php">
-                    <button>Sign Out</button>
+                <a href="profile.php">
+                    <button>User Profile</button>
                 </a>
             </div>
         <?php else: ?>

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +9,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Home Page: need to fill this up, maybe also change the order now header to be more "special" (but that'd be sitewide as well)-->
 
     <!-- Header -->
     <?php
     include 'phpscripts/header.php';
     ?>
-
 
     <div class="content">
         <h1>Welcome to Chick-fil-A!</h1>
@@ -33,7 +30,6 @@
     <?php
     include 'phpscripts/footer.php';
     ?>
-
 
 </body>
 </html>

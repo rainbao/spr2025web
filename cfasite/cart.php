@@ -10,6 +10,11 @@ $query = "SELECT c.cart_id, m.name, m.price, c.quantity, (m.price * c.quantity) 
 $stmt = $conn->prepare($query);
 $stmt->execute(['session_id' => $session_id]);
 $cart_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$subtotal = 0;
+foreach ($cart_items as $item) {
+    $subtotal += $item['total'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +23,21 @@ $cart_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart - Chick-fil-A</title>
+    <link rel="icon" href="images/logo.svg" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
  <!-- Header -->
-    <?php
-    include 'phpscripts/header.php';
-    ?>
+    <?php include 'phpscripts/header.php';?>
 
 <div class="content">
+
+    <!-- Display Error Message -->
+    <?php if (isset($_GET['error'])): ?>
+    <p style="color: red; text-align: center;"><?php echo htmlspecialchars($_GET['error']); ?></p>
+    <?php endif; ?>
+
     <h1>Your Cart</h1>
     <table class="cart-table">
         <thead>
@@ -50,13 +60,16 @@ $cart_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
     </table>
 
+    <h3>Subtotal: $<?php echo number_format($subtotal, 2); ?></h3>
+
+
 
     <div class="cart-actions">
-        <form action="phpscripts/clear_cart.php" method="POST">
+        <form action="../phpscripts/clear_cart.php" method="POST">
             <button type="submit" class="clear-cart">Clear Cart</button>
         </form>
             
-        <form action="phpscripts/checkout.php" method="POST">
+        <form action="checkout.php" method="GET">
             <button type="submit" class="checkout">Proceed to Checkout</button>
         </form>
 
@@ -64,9 +77,7 @@ $cart_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </div>
 
  <!-- Footer -->
-    <?php
-    include 'phpscripts/footer.php';
-    ?>
+    <?php include 'phpscripts/footer.php'; ?>
 
 </body>
 </html>

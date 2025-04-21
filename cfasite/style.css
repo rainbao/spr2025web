@@ -1,4 +1,4 @@
-/* -------------------- Global Styles -------------------- */
+/*  Global Styles  */
 @font-face {
     src: url(fonts/NotoSans-Regular.ttf);
     font-family: 'NotoSans';
@@ -36,7 +36,7 @@ body {
    justify-content: center;
 }
 
-/* -------------------- Content Section -------------------- */
+/*  Content Section  */
 
 .content {
     text-align: center;
@@ -70,7 +70,7 @@ body {
     font-size: 20px;
 }
 
-/* -------------------- Header Section -------------------- */
+/*  Header Section  */
 .header {
     display: flex;
     justify-content: space-between;
@@ -170,7 +170,7 @@ body {
     background-color: #c4142e;
 }
 
-/* -------------------- Sign-In/Sign-Up Section -------------------- */
+/*  Sign-In/Sign-Up Section  */
 .form-group {
     margin-bottom: 15px;
 }
@@ -209,7 +209,7 @@ body {
     margin-top: 5px;
 }
 
-/* -------------------- Footer Section -------------------- */
+/*  Footer Section  */
 .footer {
     background-color: #f1f1f1;
     color: #8b8b8b;
@@ -231,7 +231,7 @@ body {
     color: #ac1d1d;
 }
 
-/* -------------------- Menu Section -------------------- */
+/*  Menu Section  */
 .menu-items {
     display: flex;
     justify-content: center;
@@ -296,7 +296,7 @@ body {
 }
 
 
-/* -------------------- Cart Section -------------------- */
+/*  Cart Section  */
 
 .cart-table {
     width: 100%;
@@ -370,7 +370,7 @@ body {
     color: #fff;
 }
 
-/* -------------------- Find a Chick-fil-A Button -------------------- */
+/*  Find a Chick-fil-A Button  */
 .find-cfa button {
     width: auto;
     padding: 12px 10px;
@@ -386,7 +386,7 @@ body {
     color: #ac1d1d;
 }
 
-/* -------------------- Order Now Section -------------------- */
+/*  Order Now Section  */
 .order-container {
     position: absolute;
     top: 120px;
@@ -460,7 +460,7 @@ body {
     color: #ac1d1d;
 }
 
-/* -------------------- Our Values Section -------------------- */
+/*  Our Values Section  */
 .values-container {
     display: flex;
     flex-direction: column;
@@ -492,9 +492,278 @@ body {
     align-items: center;
 }
 
-/* -------------------- Map Section -------------------- */
+/*  Map Section  */
 .map-container {
     width: 100%;
     height: 700px;
     border: 1px solid #ccc;
+}
+
+
+/*  Order Confirmation Page  */
+.confirmation-title {
+    text-align: center;
+    color: #e51636;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.confirmation-message {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.confirmation-message a{
+    color: #e51636;
+}
+
+.order-summary {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #555;
+}
+
+.order-summary p {
+    margin: 10px 0;
+}
+
+.order-items-title {
+    text-align: center;
+    color: #e51636;
+    font-size: 25px;
+    margin-top: 30px;
+}
+
+.order-items-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.order-items-table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+.order-items-table td {
+    padding: 15px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-items-table td:last-child {
+    font-weight: bold;
+    color: #e51636;
+}
+
+
+/* Checkout Form Styles */
+.checkout-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #555;
+}
+
+.checkout-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'NotoSans', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus,
+.checkout-form select:focus {
+    border-color: #e51636;
+    outline: none;
+}
+
+.checkout-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.checkout-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #e51636;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'NotoSemiBold', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-form button:hover {
+    background-color: #c4142e;
+}
+
+
+
+/* User Profile Section */
+
+.profile-section p{
+    text-align: center;
+    color: #e51636;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+
+.profile-section textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: 'NotoSans', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+    resize: none;
+    height: 100px;
+}
+
+
+.profile-section textarea:focus{
+    border-color: #e51636;
+    outline: none;
+}
+
+
+
+.profile-section input:focus{
+    border-color: #e51636;
+    outline: none;
+}
+
+
+.profile-section .log-out {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
+}
+
+.profile-section .log-out button {
+    width: auto;
+    padding: 10px 15px;
+    background: none;
+    color: #e51635;
+    border: 2px solid #e51635;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'NotoSemiBold', sans-serif;
+    transition-duration: 0.2s;
+    text-align: center;
+}
+
+.profile-section .log-out button:hover {
+    color: #fff;
+    background-color: #e51635;
+}
+
+
+
+/* Order Tracking Page */
+.tracking-title {
+    text-align: center;
+    color: #e51636;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.tracking-form {
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.tracking-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.tracking-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.tracking-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #e51636;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tracking-form button:hover {
+    background-color: #c4142e;
+}
+
+.order-details {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #555;
+}
+
+.order-details p {
+    margin: 10px 0;
 }

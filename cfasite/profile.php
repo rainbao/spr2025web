@@ -1,12 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    // Redirect to the sign-in page if the user is not logged in
-    header("Location: signin.html");
+    header("Location: signin.php");
     exit();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,22 +18,19 @@ if (!isset($_SESSION['username'])) {
 <body>
 
     <!-- Header -->
-    <?php
-    include 'phpscripts/header.php';
-    ?>
+    <?php include 'phpscripts/header.php'; ?>
 
+    <!-- Profile Settings -->
     <div class="container">
-        <div class="profile-header">
-            <h1>User Profile</h1>
-            <p>Manage your account details below.</p>
-        </div>
-
+    
         <div class="profile-section">
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Username">
-                </div>
+            <h1>User Profile</h1>
+
+            <!-- Display Username -->
+                <p id="username">User: <?php echo htmlspecialchars($_SESSION['username']); ?></p>
+
+            <!-- Form to update user information -->
+            <form action="phpscripts/update_profile.php" method="POST">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Email" required>
@@ -49,20 +44,20 @@ if (!isset($_SESSION['username'])) {
                     <input type="text" id="address" name="address" placeholder="Address">
                 </div>
                 <div class="form-group">
-                    <label for="preferences">Preferences</label>
-                    <textarea id="preferences" name="preferences" placeholder="Your preferences or notes"></textarea>
-                </div>
-                <div class="form-group">
                     <button type="submit">Save Changes</button>
                 </div>
             </form>
+
+            <div class="log-out">
+                <form action="phpscripts/logout.php" method="POST">
+                    <button type="submit">Sign Out</button>
+                </form>
+            </div>
         </div>
     </div>
 
-     <!-- Footer -->
-    <?php
-    include 'phpscripts/footer.php';
-    ?>
+    <!-- Footer -->
+    <?php include 'phpscripts/footer.php'; ?>
 
 </body>
 </html>

@@ -1,14 +1,10 @@
 <?php
+// Start the session to manage user state
 session_start();
+
+// Include the database connection file
 require_once 'phpscripts/connect.php';
 ?>
-
-<?php
-if (isset($_GET['error'])): ?>
-    <script>
-        alert("<?php echo htmlspecialchars($_GET['error']); ?>");
-    </script>
-<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,13 +13,12 @@ if (isset($_GET['error'])): ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Chick-fil-A</title>
     <link rel="icon" href="images/logo.svg" type="image/x-icon">
-    <link rel = "stylesheet" href = "style.css">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
-    <?php
-    include 'phpscripts/header.php';
+    <?php 
+    include 'phpscripts/header.php'; 
     ?>
 
     <div class="container">
@@ -32,10 +27,16 @@ if (isset($_GET['error'])): ?>
             <h1>Sign Up</h1>
         </div>
 
-        <form action="phpscripts/signup.php" method="POST">
+        <!-- Display Error Message -->
+        <?php if (isset($_GET['error'])): ?>
+            <p style="color: red; text-align: center;"><?php echo htmlspecialchars($_GET['error']); ?></p>
+        <?php endif; ?>
+
+        <!-- Sign-Up Form -->
+        <form action="phpscripts/signup_handler.php" method="POST">
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" placeholder = "Email" name="email" required>
+                <input type="email" id="email" placeholder="Email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
@@ -43,22 +44,16 @@ if (isset($_GET['error'])): ?>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder = "Password" name="password" required>
+                <input type="password" id="password" placeholder="Password" name="password" required>
             </div>
             <div class="form-group">
                 <button type="submit">Sign Up</button>
             </div>
         </form>
-        <p style="text-align: center;">Forgot your password? <a href="reset_password.html" style="color: #e51636;">Reset it</a></p>
         <p style="text-align: center;">Already have an account? <a href="signin.php" style="color: #e51636;">Sign In</a></p>
     </div>
 
-
     <!-- Footer -->
-    <?php
-    include 'phpscripts/footer.php';
-    ?>
-
-
+    <?php include 'phpscripts/footer.php'; ?>
 </body>
-</html></div>
+</html>
