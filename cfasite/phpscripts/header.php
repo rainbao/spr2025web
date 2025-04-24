@@ -6,6 +6,7 @@ require_once 'phpscripts/connect.php';
     <a href="index.php">
         <img src="images/logo.svg" alt="Chick-fil-A Logo">
     </a>
+        <!-- The way we implemented the header makes it kinda difficult to organize the directory so pretty much everything is in root -->
 
     <div class="nav-bar">
         <ul>

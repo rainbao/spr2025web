@@ -36,7 +36,6 @@ $error_message = $tracking_data['error_message'];
         <!-- Logged-in User Form -->
         <form action="order_tracking.php" method="GET" class="tracking-form">
             <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>! You can view all your orders below.</p>
-            <button type="submit" name="view_all" value="true">View My Orders</button>
         </form>
     <?php else: ?>
         <!-- Non-Logged-In User Form -->
@@ -53,18 +52,34 @@ $error_message = $tracking_data['error_message'];
 
     <!-- Display Order Details -->
     <?php if ($order): ?>
-        <div class="order-details">
-            <h2>Order Details</h2>
-            <p><strong>Order ID:</strong> <?php echo htmlspecialchars($order['order_id']); ?></p>
-            <p><strong>Order Type:</strong> <?php echo ucfirst(htmlspecialchars($order['order_type'])); ?></p>
-            <p><strong>Status:</strong> <?php echo ucfirst(htmlspecialchars($order['status'])); ?></p>
-            <p><strong>Total Price:</strong> $<?php echo number_format($order['total_price'], 2); ?></p>
-            <?php if ($order['delivery_address']): ?>
+    <div class="order-details">
+        <h2>Order Details</h2>
+        <p><strong>Order ID:</strong> <?php echo htmlspecialchars($order['order_id']); ?></p>
+        <p><strong>Order Type:</strong> <?php echo ucfirst(htmlspecialchars($order['order_type'])); ?></p>
+        <p><strong>Status:</strong> <?php echo ucfirst(htmlspecialchars($order['status'])); ?></p>
+        <p><strong>Total Price:</strong> $<?php echo number_format($order['total_price'], 2); ?></p>
+        <?php if (!empty($order['delivery_address'])): ?>
+            <p><strong>Delivery Address:</strong> <?php echo htmlspecialchars($order['delivery_address']); ?></p>
+        <?php endif; ?>
+        <p><strong>Order Notes:</strong> <?php echo htmlspecialchars($order['order_notes']); ?></p>
+    </div>
+    <?php elseif (!empty($orders)): ?>
+    <div class="order-list">
+        <h2>Your Orders</h2>
+        <?php foreach ($orders as $order): ?>
+            <div class="order-summary">
+                <p><strong>Order ID:</strong> <?php echo htmlspecialchars($order['order_id']); ?></p>
+                <p><strong>Status:</strong> <?php echo ucfirst(htmlspecialchars($order['status'])); ?></p>
+                <p><strong>Total Price:</strong> $<?php echo number_format($order['total_price'], 2); ?></p>
+                <p><strong>Order Type:</strong> <?php echo ucfirst(htmlspecialchars($order['order_type'])); ?></p>
+                <?php if (!empty($order['delivery_address'])): ?>
                 <p><strong>Delivery Address:</strong> <?php echo htmlspecialchars($order['delivery_address']); ?></p>
-            <?php endif; ?>
-            <p><strong>Order Notes:</strong> <?php echo htmlspecialchars($order['order_notes']); ?></p>
-        </div>
-    <?php endif; ?>
+                <?php endif; ?>
+                <p><strong>Order Notes:</strong> <?php echo htmlspecialchars($order['order_notes']); ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
 </div>
 
 <!-- Footer -->

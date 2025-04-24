@@ -103,7 +103,6 @@ if (count($cart_items) === 0) {
 
 <script>
     // JavaScript to toggle the address field if delivery or pickup is selected
-    // Probably the only JavaScript for this site
     document.getElementById('order_type').addEventListener('change', function () {
         const addressSection = document.getElementById('address-section');
         const deliveryAddress = document.getElementById('delivery_address');

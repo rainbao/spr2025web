@@ -2,12 +2,20 @@
 session_start();
 require_once 'connect.php';
 
-
 $session_id = session_id();
 $user_id = $_SESSION['user_id'] ?? null; // NULL for guest users
 $order_type = $_POST['order_type'];
 $delivery_address = $_POST['delivery_address'] ?? null;
 $order_notes = $_POST['order_notes'] ?? null;
+
+// Handle guest user details
+$customer_name = null;
+$customer_email = null;
+
+if (!$user_id) { // If the user is not logged in
+    $customer_name = $_POST['customer_name'] ?? null;
+    $customer_email = $_POST['customer_email'] ?? null;
+}
 
 // Calculate total price
 $query = "SELECT SUM(m.price * c.quantity) AS total_price
@@ -19,10 +27,12 @@ $stmt->execute(['session_id' => $session_id]);
 $total_price = $stmt->fetchColumn();
 
 // Insert order
-$stmt = $conn->prepare("INSERT INTO orders (user_id, total_price, delivery_address, order_notes, order_type) 
-                        VALUES (:user_id, :total_price, :delivery_address, :order_notes, :order_type)");
+$stmt = $conn->prepare("INSERT INTO orders (user_id, customer_name, customer_email, total_price, delivery_address, order_notes, order_type) 
+                        VALUES (:user_id, :customer_name, :customer_email, :total_price, :delivery_address, :order_notes, :order_type)");
 $stmt->execute([
     'user_id' => $user_id,
+    'customer_name' => $customer_name,
+    'customer_email' => $customer_email,
     'total_price' => $total_price,
     'delivery_address' => $delivery_address,
     'order_notes' => $order_notes,
