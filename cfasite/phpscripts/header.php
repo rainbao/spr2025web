@@ -38,7 +38,7 @@ require_once 'phpscripts/connect.php';
 
         <div class="find-cfa">
             <a href="find_cfa.php">
-                <button>Find a Chick-fil-A</button>
+                <button>Find a Location</button>
             </a>
         </div>
 

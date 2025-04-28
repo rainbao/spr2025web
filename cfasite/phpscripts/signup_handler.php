@@ -7,12 +7,18 @@ require_once 'included_functions(1).php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $username = $_POST['username'];
-    // Password encrypt using included_functinons
     $password = password_encrypt($_POST['password']); 
+
+    // Validate inputs
+    if (empty($email) || empty($username) || empty($password)) {
+        header("Location: ../signup.php?error=All fields are required");
+        exit();
+    }
 
     // Prepare SQL query to insert user into the database
     $stmt = $conn->prepare("INSERT INTO users (email, username, password) VALUES (:email, :username, :password)");
 
+    
     try {
         $stmt->execute([
             ':email' => $email,

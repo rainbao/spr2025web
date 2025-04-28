@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         // Update the user's information in the database
-        $stmt = $conn->prepare("UPDATE users SET email = :email, phone = :phone, address = :address WHERE username = :username");
+        $stmt = $conn->prepare("UPDATE users SET email = :email, address = :address WHERE username = :username");
         $stmt->execute([
             ':email' => $email,
             ':phone' => $phone,

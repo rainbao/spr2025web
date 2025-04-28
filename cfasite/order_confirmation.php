@@ -31,7 +31,8 @@ $order_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <div class="content">
     <h1 class="confirmation-title">Order Confirmation</h1>
     <p class="confirmation-message">Thank you for your order! Your order has been successfully placed.</p>
-    <p class="confirmation-message">Track your order <strong><a href = "order_tracking.php">here</a></strong> using your order id. </p>
+    <p class="confirmation-message">Track your order <strong><a href = "order_tracking.php">here</a></strong></p>
+    <p class="confirmation-message">If you are not logged in, you will need to use your order id and email</p>
     <p class="confirmation-message">Pay in cash when you recieve your order.</p>
     <div class="order-summary">
         <p><strong>Order ID:</strong> <?= $order['order_id']; ?></p>

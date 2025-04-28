@@ -3,6 +3,8 @@ CREATE TABLE users (
     email VARCHAR(255) NOT NULL UNIQUE,
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    phone VARCHAR(15) DEFAULT NULL, -- Optional phone number
+    address TEXT DEFAULT NULL, -- Optional address
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -35,8 +37,10 @@ CREATE TABLE orders (
     delivery_address TEXT DEFAULT NULL,
     order_notes TEXT DEFAULT NULL,
     status ENUM('pending', 'preparing', 'ready', 'out_for_delivery', 'completed') DEFAULT 'pending',
+    assigned_driver_id INT DEFAULT NULL, -- Driver assigned to the order
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE SET NULL,
+    FOREIGN KEY (assigned_driver_id) REFERENCES staff(id) ON DELETE SET NULL 
 );
 
 
@@ -46,7 +50,7 @@ CREATE TABLE order_items (
     menu_item_id INT NOT NULL,
     quantity INT NOT NULL DEFAULT 1,
     FOREIGN KEY (order_id) REFERENCES orders(order_id) ON DELETE CASCADE,
-    FOREIGN KEY (menu_item_id) REFERENCES menu_items(menu_item_id) ON DELETE CASCADE
+    FOREIGN KEY (menu_item_id) REFERENCES menu_items(menu_item_id) ON DELETE SET NULL
 );
 
 CREATE TABLE staff (

@@ -68,14 +68,14 @@ $error_message = $tracking_data['error_message'];
         <h2>Your Orders</h2>
         <?php foreach ($orders as $order): ?>
             <div class="order-summary">
-                <p><strong>Order ID:</strong> <?php echo htmlspecialchars($order['order_id']); ?></p>
-                <p><strong>Status:</strong> <?php echo ucfirst(htmlspecialchars($order['status'])); ?></p>
-                <p><strong>Total Price:</strong> $<?php echo number_format($order['total_price'], 2); ?></p>
-                <p><strong>Order Type:</strong> <?php echo ucfirst(htmlspecialchars($order['order_type'])); ?></p>
-                <?php if (!empty($order['delivery_address'])): ?>
-                <p><strong>Delivery Address:</strong> <?php echo htmlspecialchars($order['delivery_address']); ?></p>
-                <?php endif; ?>
-                <p><strong>Order Notes:</strong> <?php echo htmlspecialchars($order['order_notes']); ?></p>
+            <p><strong>Order ID:</strong> <?php echo htmlspecialchars($order['order_id']); ?></p>
+             <p><strong>Order Type:</strong> <?php echo ucfirst(htmlspecialchars($order['order_type'])); ?></p>
+            <p><strong>Status:</strong> <?php echo ucfirst(htmlspecialchars($order['status'])); ?></p>
+            <p><strong>Total Price:</strong> $<?php echo number_format($order['total_price'], 2); ?></p>
+        <?php if (!empty($order['delivery_address'])): ?>
+            <p><strong>Delivery Address:</strong> <?php echo htmlspecialchars($order['delivery_address']); ?></p>
+        <?php endif; ?>
+            <p><strong>Order Notes:</strong> <?php echo htmlspecialchars($order['order_notes']); ?></p>
             </div>
         <?php endforeach; ?>
     </div>
