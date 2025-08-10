@@ -79,7 +79,7 @@ The system uses a normalized MySQL database with the following key tables:
 
 1. **Clone the repository**
    ```bash
-   git clone git clone <repository-url>
+   git clone https://github.com/rainbao/spr2025web.git
    cd cnbwebsite
    ```
 
